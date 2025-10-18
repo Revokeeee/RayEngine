@@ -1,0 +1,63 @@
+# ==============================
+# Visual Studio
+# ==============================
+.vs/
+*.VC.db
+*.VC.VC.opendb
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# ==============================
+# Build artifacts
+# ==============================
+/build/
+/CMakeFiles/
+/CMakeCache.txt
+/*.sln
+/*.vcxproj*
+*.pdb
+*.obj
+*.ipch
+*.log
+*.idb
+*.iobj
+*.lastbuildstate
+
+# ==============================
+# Solution Filter
+# ==============================
+*.slnf
+
+# ==============================
+# Visual Studio Code (якщо використовуєш)
+# ==============================
+.vscode/
+
+# ==============================
+# Mac / Linux
+# ==============================
+*~
+*.swp
+.DS_Store
+
+# ==============================
+# CMake temporary
+# ==============================
+CMakeScripts/
+Testing/
+CTestTestfile.cmake
+Makefile
+cmake_install.cmake
+
+# ==============================
+# Misc
+# ==============================
+*.exe
+*.dll
+*.lib
+*.so
+*.a
+*.dylib
+*.out
