@@ -13,6 +13,7 @@
 # Build artifacts
 # ==============================
 /build/
+/out/
 /CMakeFiles/
 /CMakeCache.txt
 /*.sln

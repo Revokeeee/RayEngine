@@ -3,4 +3,7 @@ add_executable(Sandbox
 )
 
 target_link_libraries(Sandbox PRIVATE RayEngine)
-target_include_directories(Sandbox PRIVATE ../RayEngine/include)
+
+source_group(TREE ${CMAKE_CURRENT_SOURCE_DIR}/src FILES
+    src/main.cpp
+)

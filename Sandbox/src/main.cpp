@@ -1,8 +1,9 @@
 #include<iostream>
-#include "RayEngine/Core.h"
+#include "RayEngine.h"
 
 int main()
 {
-    std::cout<<"RayEngine is RUNNING"<<std::endl;
-    std::cin.get();
+	auto& app = RayEngine::Application::GetInstance();
+	app.Run();
+
 }
