@@ -1,7 +1,7 @@
 #include "Application.h"
+#include "Log.h"
 
 // Temporal include
-#include <iostream>
 #include <thread>
 #include <chrono>
 //------------------
@@ -14,17 +14,19 @@ namespace RayEngine
 		m_IsRunning = true;
 		while (m_IsRunning)
 		{
-			std::cout << "RayEngine is running..." << std::endl;
+			RAY_CORE_INFO("Application Is Running");
 			std::this_thread::sleep_for(std::chrono::milliseconds(500));
 		}
 		Shutdown();
 	}
 	void Application::Initialize()
 	{
-		// Initialization logic goes here
+		RayEngine::Log::Init();
+		RAY_CORE_INFO("Application initializing");
 	}
 	void Application::Shutdown()
 	{
-		// Shutdown logic goes here
+		RAY_CORE_INFO("Shutting down...");
+		RayEngine::Log::ShutDown();
 	}
 }

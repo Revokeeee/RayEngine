@@ -2,15 +2,15 @@
 add_library(RayEngine STATIC
     src/RayEngine.h
     src/RayEngine/Core/Core.h
-    src/RayEngine/Core/Core.cpp
- "src/RayEngine/Core/Application.h" "src/RayEngine/Core/Application.cpp")
+    src/RayEngine/Core/Application.h
+    src/RayEngine/Core/Application.cpp
+    src/RayEngine/Core/Log.h
+    src/RayEngine/Core/Log.cpp
+
+ "src/RayEngine/Core/Log.h" "src/RayEngine/Core/Log.cpp")
 
 target_include_directories(RayEngine PUBLIC
     ${CMAKE_CURRENT_SOURCE_DIR}/src
 )
 
-# to show folders in sln
-source_group(TREE ${CMAKE_CURRENT_SOURCE_DIR}/src FILES
-    src/RayEngine.h
-    src/RayEngine/Core/Core.h
-)
+target_link_libraries(RayEngine PUBLIC spdlog::spdlog)
