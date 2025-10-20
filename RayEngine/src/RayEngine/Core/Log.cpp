@@ -7,23 +7,34 @@ namespace RayEngine {
 
     void Log::Init(const char* pattern) {
         try {
-            // core logger (engine)
+			// Set log pattern
             spdlog::set_pattern(pattern);
+
+            // Core logger (engine)
             s_CoreLogger = spdlog::stdout_color_mt("RAYENGINE");
-            s_CoreLogger->set_level(spdlog::level::trace);
 
-            // client logger (sandbox / user)
+            // Client logger (sandbox / user)
             s_ClientLogger = spdlog::stdout_color_mt("APP");
-            s_ClientLogger->set_level(spdlog::level::trace);
 
-            // optional: flush on error or every tick
+#ifdef RAY_DEBUG
+            // Debug
+            s_CoreLogger->set_level(spdlog::level::trace);
+            s_ClientLogger->set_level(spdlog::level::trace);
+#else
+            // TODO: Release
+            s_CoreLogger->set_level(spdlog::level::warn);
+            s_ClientLogger->set_level(spdlog::level::warn);
+#endif
+
+            // Optional
             spdlog::flush_on(spdlog::level::err);
         }
         catch (const spdlog::spdlog_ex& ex) {
-            // fallback to minimal output on error
+			// Fallcack if log initialization fails
             printf("Log init failed: %s\n", ex.what());
         }
     }
+
 
     std::shared_ptr<spdlog::logger>& Log::GetCoreLogger() { return s_CoreLogger; }
     std::shared_ptr<spdlog::logger>& Log::GetClientLogger() { return s_ClientLogger; }

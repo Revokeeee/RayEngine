@@ -4,6 +4,12 @@
 int main()
 {
 	auto& app = RayEngine::Application::GetInstance();
-	app.Run();
-
+	if (app.Run())
+	{
+		return 0;
+	}
+	else
+	{
+		return -1;
+	}
 }

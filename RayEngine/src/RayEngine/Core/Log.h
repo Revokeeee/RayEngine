@@ -9,9 +9,9 @@ namespace RayEngine {
     class Log {
     public:
         static void Init(const char* pattern = "[%T] [%^%l%$] %v");
-        static void ShutDown() { spdlog::shutdown(); }
-        static std::shared_ptr<spdlog::logger>& GetCoreLogger();
-        static std::shared_ptr<spdlog::logger>& GetClientLogger();
+        static void ShutDown() noexcept { spdlog::shutdown(); }
+        [[nodiscard]] static std::shared_ptr<spdlog::logger>& GetCoreLogger();
+        [[nodiscard]] static std::shared_ptr<spdlog::logger>& GetClientLogger();
 
     private:
         static std::shared_ptr<spdlog::logger> s_CoreLogger;
