@@ -20,7 +20,7 @@ namespace RayEngine {
             // Debug
             s_CoreLogger->set_level(spdlog::level::trace);
             s_ClientLogger->set_level(spdlog::level::trace);
-#else
+#else RAY_RELEASE
             // TODO: Release
             s_CoreLogger->set_level(spdlog::level::warn);
             s_ClientLogger->set_level(spdlog::level::warn);

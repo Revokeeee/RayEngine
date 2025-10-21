@@ -33,13 +33,7 @@ namespace RayEngine
             {
                 // Ensure destructor never throws.
                 
-                RAY_CORE_ERROR("Logging failed for '%s'/n", m_Name.c_str());
-
-                // In debug builds, abort so developers notice the problem immediately.
-                // Remove or guard this if you do not want an immediate termination in debug.
-#ifdef RAY_DEBUG;
-                std::abort();
-#endif
+                RAY_CORE_ERROR("Logging failed for '%s'\n", m_Name.c_str());
             }
         }
 

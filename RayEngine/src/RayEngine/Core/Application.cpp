@@ -4,7 +4,6 @@
 
 #include <thread>
 #include <chrono>
-#include <iostream>
 #include <utility>
 #include <cassert>
 #include <memory>
@@ -102,7 +101,7 @@ namespace RayEngine
 			}
 			catch (...)
 			{
-				std::cerr << "Log::Init() failed and logging is not available\n";
+				fprintf(stderr, "Log::Init() failed and logging is not available\n");
 			}
 			return false;
 		}
