@@ -10,7 +10,7 @@ add_library(RayEngine STATIC
  "src/RayEngine/Core/Log.h"
  "src/RayEngine/Core/Log.cpp" 
  "src/RayEngine/Core/Time.h" 
- "src/RayEngine/Core/Profiler.h")
+ "src/RayEngine/Core/Profiler.h" "src/RayEngine/Core/Layer.h" "src/RayEngine/Core/LayerStack.h" "src/RayEngine/Core/LayerStack.cpp")
 
 target_include_directories(RayEngine PUBLIC
     ${CMAKE_CURRENT_SOURCE_DIR}/src

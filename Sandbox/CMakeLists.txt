@@ -1,6 +1,6 @@
 add_executable(Sandbox
     src/main.cpp
-)
+ "src/ExampleLayer.h" "src/ExampleLayerAsyncTest.h" "src/ExampleLayerDirectTest.h")
 
 target_link_libraries(Sandbox PRIVATE RayEngine)
 
