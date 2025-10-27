@@ -22,7 +22,7 @@ The engine provides:
 Clone the repository and build the project using CMake:
 
 ```bash
-git clone https://github.com/<your-username>/RayEngine.git
+git clone https://github.com/Revokeeee/RayEngine
 cd RayEngine
 mkdir build && cd build
 cmake ..
